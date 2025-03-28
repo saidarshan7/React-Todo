@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv').config({path: './.env'})
 const zod = require('zod')
 const bodyParser = require('body-parser')
 var jwt = require('jsonwebtoken');
@@ -88,3 +89,6 @@ app.put("/completed", async (req,res)=>{
     
 })
 
+app.listen(process.env.PORT_NUM,()=>{
+    console.log("listning on porrt 3000")
+})
